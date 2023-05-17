@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+
+    grid-template-areas: " h h h" 
+                         " m m m "
+                         "f f f";
+    grid-template-columns: 1fr ;
+    grid-template-rows: 6rem calc(100% - 6rem - 6rem) 6rem ;
+
+    overflow: hidden;
+}
+/*** header ***/
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    grid-area: h;
+    background-color: #DDBFB0;
+
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+
+
+}
+
+
+header ul {
+    list-style-type: none;
+}
+
+
+/*** coisas do logo ***/
+    .logo {
+        height: 100%;
+        width: 50rem;
+        display: flex;
+    }
+
+    #foto {
+        width: 100px;
+    }
+
+  header .titulo{
+    
+        height: 100%;
+        width:auto; 
+        background-color: aqua;     
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        background-color:  #DDBFB0;
+
+  }
+
+  header h1 {
+    font-family: 'Voga', sans-serif;
+ font-size: 3rem;
+  }
+
+  header h2 {
+    font-family: 'Voga', sans-serif;
+    font-size: 2.5rem;
+  }
+
+/*** coisas do botao ***/
+    .botao {
+        height: 100%;
+        width: 50rem;
+        background-color: #f1e1e1;
+    }
+/*** coisas do menu ***/
+    .menu {
+        height: 100%;
+        width: 50rem;
+        background-color: #c50f0f;
+        display: flex;
+        flex-direction: row;
+        justify-content:end;
+        align-items: center;
+        padding-inline-end: 20px;
+
+    }
+    .menu svg{
+        width: 2rem;
+        height: 2rem;
+    }
+
+
+/*** main ***/
+
+main{
+    
+    grid-area: m;
+    display: grid;
+
+    grid-template-columns: 1fr ;
+    grid-template-rows: 100% ;
+    grid-template-areas: "carrossel carrossel carrossel";
+    
+}
+
+
+.swiper 
+{
+    grid-area: carrossel;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+    .swiper-slide 
+    {
+        background-color: rgb(218, 218, 218);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+/******************************* Slide ****************************/
+
+.slider
+{
+    grid-area: carrossel;
+
+    margin: 0;
+
+    overflow: hidden;
+
+}
+    .slides
+    {
+        width: 400%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+
+    }
+        .slides input
+        {
+            display: none;
+        }
+        .slide
+        {
+            width: 25%;
+            position: relative;
+        }
+            .slide img
+            {
+                width: 100%;
+                height: 100%;
+            }
+
+    .manual-navegation
+    {
+        position: absolute;
+
+        z-index: 20;
+        
+        left: 0;
+        bottom:calc(5rem + 3rem);
+
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+        .manual-btn
+        {
+            border: 2px solid white;
+            padding: 5px;
+            border-radius: 10px;
+
+            cursor: pointer;
+            transition: .5s;
+        }
+        .manual-btn:not(:last-child)
+        {
+            margin-right: 20px;
+        }
+            .manual-btn:hover
+            {
+                background-color: var(--cor-manual-btn-hover);
+            }
+#radio1:checked ~ .first
+{
+    margin-left: 0;
+}
+#radio2:checked ~ .first
+{
+    margin-left: -50%;
+}
+#radio3:checked ~ .first
+{
+    margin-left: -100%;
+}
+#radio4:checked ~ .first
+{
+    margin-left: -150%;
+}
+
+    .navegation-auto div
+    {
+        border: 2px solid #20a6ff;
+         border-radius: 10px;
+
+        padding: 5px;
+       
+        cursor: pointer;
+        transition: .5s;
+    }
+.navegation-auto
+{
+    position: absolute;
+
+    left: 0;
+    bottom:calc(5rem + 3rem);
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+.navegation-auto div:not(:last-child)
+{
+    margin-right: 20px;
+}
+        #radio1:checked ~ .navegation-auto .auto-btn1
+        {
+           background-color: var(--cor-checked-navegation-auto);
+        }
+        #radio2:checked ~ .navegation-auto .auto-btn2
+        {
+           background-color: var(--cor-checked-navegation-auto);
+        }
+        #radio3:checked ~ .navegation-auto .auto-btn3
+        {
+           background-color: var(--cor-checked-navegation-auto);
+        }
+        #radio4:checked ~ .navegation-auto .auto-btn4
+        {
+           background-color: var(--cor-checked-navegation-auto);
+        }
+
+/*** footer ***/
+footer{
+    grid-area: f;
+    background-color: #DDBFB0;
+}

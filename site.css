@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html {
+    height: 500vh;
+}
+
+.container{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header{
+    width: 100%;
+    padding: 60px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+header i{ 
+    font-size: 30px;
+    color: black;
+}
+header ul {
+    list-style-type: none;
+}
+header ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+header ul li a{
+    color: rgb(0, 0, 0);
+}
+.btn-contato button{
+    wight
+}
+.banner{
+    height: 100vh;
+    background-image:url(ham.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+
+}
+
